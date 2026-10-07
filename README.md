@@ -51,7 +51,7 @@ Can a small local model consistently produce structured data that can safely be 
 
 ### 4. Efficiency
 
-Can quantization reduce resource requirements while maintaining acceptable performance and quality?
+Can quantization reduce model footprint while maintaining acceptable performance and quality?
 
 ---
 
@@ -130,7 +130,7 @@ The performance benchmark measures:
 - **Tokens per second**
 - System memory snapshots
 
-Each model was tested using the same controlled benchmark prompt and multiple runs.
+Each model was tested using the same controlled benchmark prompt and five runs.
 
 ## Baseline Results
 
@@ -150,6 +150,8 @@ It achieved:
 - Lowest average latency
 - Highest average throughput
 
+> **Note:** Benchmark averages include cold-start effects. In particular, some runs showed substantially higher TTFT while the model was being loaded.
+
 ---
 
 # 2. Standardized Quality Evaluation
@@ -167,7 +169,7 @@ The prompts are divided into eight categories:
 7. Instruction Following
 8. Structured Output
 
-Each model was evaluated using the same prompts.
+Each model was evaluated using the same prompts and scoring methodology.
 
 ## Quality Results
 
@@ -184,6 +186,8 @@ Qwen 2.5 1.5B and Llama 3.2 1B achieved the same overall accuracy in the standar
 However, Qwen provided significantly better inference performance on the tested hardware.
 
 This made Qwen 2.5 1.5B the strongest candidate for the subsequent reliability and efficiency experiments.
+
+> **Evaluation note:** These are custom task scores from the project's 40-prompt evaluation set, not results from a standardized public benchmark.
 
 ---
 
@@ -238,10 +242,7 @@ JSON Parsing
     ▼
 Pydantic Validation
     │
-    ├─────────────── Valid ───────────────►
-    │                                      │
-    │                                      ▼
-    │                              Validated Object
+    ├─────────────── Valid ───────────────► Validated Object
     │
     └──────────── Invalid
                        │
@@ -273,7 +274,7 @@ The system measured:
 - Final failure rate
 - Overall structured-output reliability
 
-## Results
+## Qwen 2.5 1.5B Results
 
 | Metric | Result |
 |---|---:|
@@ -293,30 +294,57 @@ The retry mechanism remains available as a reliability layer for cases where mod
 
 # 4. Quantization Experiment
 
-The project also investigates the impact of model quantization.
+After selecting Qwen 2.5 1.5B as the strongest candidate for the tested hardware, a more aggressively quantized Q3 variant was evaluated.
 
-The selected Qwen model is being compared against a more aggressively quantized variant to evaluate the trade-off between:
+The experiment compares:
 
-- Model size
-- Inference speed
-- Latency
-- Task quality
-- Structured-output reliability
+- **Q4 baseline:** `qwen2.5:1.5b`
+- **Q3 quantized:** `qwen2.5:1.5b-instruct-q3_K_M`
 
-The experiment uses the same benchmark methodology and evaluation dataset.
+The goal was to measure the trade-off between model footprint, inference performance, task quality, and structured-output reliability.
 
-## Quantization Comparison
+## Quantization Results
 
-| Metric | Baseline | Quantized |
-|---|---:|---:|
-| Model size | TBD | TBD |
-| Avg TTFT | 0.72s | TBD |
-| Avg latency | 9.95s | TBD |
-| Avg tokens/sec | 7.85 | TBD |
-| Accuracy | 72.5% | TBD |
-| Structured reliability | 100% | TBD |
+| Metric | Q4 Baseline | Q3 Quantized | Change |
+|---|---:|---:|---:|
+| Model size | **986 MB** | **824 MB** | **-16.4%** |
+| Avg TTFT | **0.72s** | 4.71s | Higher |
+| Avg latency | **9.95s** | 13.34s | Higher |
+| Avg tokens/sec | **7.85** | 6.72 | **-14.4%** |
+| Accuracy | **72.5%** | 67.5% | **-5.0 pp** |
+| Structured reliability | **100%** | **100%** | No change |
 
-The final quantization results will be added after the experiment is completed.
+### Quantization Observation
+
+The Q3 variant reduced the local model footprint by approximately **16.4%**.
+
+However, on the tested CPU hardware, the more aggressive quantization also resulted in:
+
+- Lower average throughput
+- Higher average latency
+- A 5 percentage-point decrease in task accuracy
+
+Structured-output reliability remained at **100%** in the 20-prompt test.
+
+This demonstrates that **more aggressive quantization is not automatically better for every hardware configuration**. The optimal quantization level depends on the hardware, workload, and acceptable quality trade-offs.
+
+> **Benchmark note:** The Q3 five-run average was affected by cold-start/outlier runs. Warm runs were substantially faster than the first and fifth runs, so the five-run average should be interpreted together with the individual-run variability.
+
+---
+
+# Overall Model Selection
+
+Based on the experiments, **Qwen 2.5 1.5B in the baseline Q4 configuration** was selected as the preferred configuration for this project.
+
+The decision was based on:
+
+- Highest baseline throughput
+- Lowest baseline latency
+- Lowest baseline TTFT
+- Joint-highest task accuracy
+- 100% structured-output validity in the initial reliability test
+
+The Q3 configuration provides a smaller model footprint, but its measured performance and task-quality trade-offs were less favorable on this specific hardware.
 
 ---
 
@@ -373,16 +401,15 @@ local-ai-assistant/
 ├── benchmark_results/
 │   ├── qwen25_1.5b_baseline.csv
 │   ├── phi3.5_baseline.csv
-│   └── llama3.2_1b_baseline.csv
+│   ├── llama3.2_1b_baseline.csv
+│   └── qwen2.5_1.5b-instruct-q3_K_M_baseline.csv
 │
 └── evaluation/
-    │
     ├── prompts.csv
     ├── structured_prompts.csv
-    │
     ├── evaluate.py
     ├── score_results.py
-    └── test_structured_output.py
+    ├── test_structured_output.py
     │
     └── results/
         ├── qwen25_1.5b_results.csv
@@ -391,6 +418,8 @@ local-ai-assistant/
         ├── phi3.5_scored.csv
         ├── llama3.2_1b_results.csv
         ├── llama3.2_1b_scored.csv
+        ├── qwen2.5_1.5b-instruct-q3_K_M_results.csv
+        ├── qwen2.5_1.5b-instruct-q3_K_M_scored.csv
         └── structured_results.csv
 ```
 
@@ -425,17 +454,25 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
----
+## 5. Install Ollama
 
-# Running the Assistant
-
-Pull the desired model through Ollama:
+Install Ollama separately, then pull the desired model:
 
 ```bash
 ollama pull qwen2.5:1.5b
 ```
 
-Then run:
+For the quantization experiment:
+
+```bash
+ollama pull qwen2.5:1.5b-instruct-q3_K_M
+```
+
+---
+
+# Running the Assistant
+
+Run the local assistant:
 
 ```bash
 python assistant.py
@@ -469,6 +506,12 @@ python benchmark.py phi3.5
 python benchmark.py llama3.2:1b
 ```
 
+Quantized Qwen:
+
+```bash
+python benchmark.py qwen2.5:1.5b-instruct-q3_K_M
+```
+
 ---
 
 # Running the Quality Evaluation
@@ -491,6 +534,8 @@ The same process can be used for the other models.
 
 # Running Structured Output Testing
 
+Run the single structured-output example:
+
 ```bash
 python structured_output.py
 ```
@@ -505,11 +550,9 @@ python evaluation/test_structured_output.py
 
 # Key Findings
 
-The experiments currently show:
-
 ### Model Performance
 
-Qwen 2.5 1.5B achieved the strongest inference performance among the tested models.
+Qwen 2.5 1.5B achieved the strongest baseline inference performance among the tested models.
 
 ### Model Quality
 
@@ -527,9 +570,13 @@ Pydantic validation provides a deterministic validation layer between an LLM and
 
 Qwen 2.5 1.5B achieved **100% first-attempt structured-output validity** across the initial 20-prompt reliability experiment.
 
+The quantized Q3 configuration also achieved **100%** in the same structured-output test.
+
 ### Quantization
 
-Quantization is being evaluated as an additional optimization for reducing resource requirements while maintaining acceptable model quality.
+The Q3 variant reduced model size by **16.4%**, but on the tested hardware it also reduced throughput by **14.4%** and task accuracy by **5 percentage points**.
+
+This highlights the importance of evaluating quantization empirically rather than assuming that a smaller model will always be faster or better.
 
 ---
 
@@ -544,6 +591,7 @@ This project has several limitations:
 - The benchmark focuses on CPU-based local inference.
 - Results may differ significantly on other hardware.
 - The quality scoring uses a custom evaluation methodology rather than a standardized public benchmark.
+- Quantization results are based on one Q3 configuration rather than a complete quantization sweep.
 
 Therefore, the results should be interpreted as **hardware- and methodology-specific experimental results**, not universal model rankings.
 
@@ -551,12 +599,12 @@ Therefore, the results should be interpreted as **hardware- and methodology-spec
 
 # Future Improvements
 
-Possible future extensions include:
+Possible extensions include:
 
 - Larger evaluation datasets
 - More structured-output test cases
 - Additional quantization levels
-- Dedicated memory profiling
+- Dedicated model-memory profiling
 - GPU inference comparison
 - FastAPI service layer
 - Docker deployment
@@ -575,8 +623,8 @@ Possible future extensions include:
 - Llama
 - Phi
 - Pydantic
-- CSV-based evaluation
 - psutil
+- CSV-based evaluation
 - Git / GitHub
 
 ---
@@ -604,3 +652,5 @@ Local AI System Engineering
 ```
 
 The experiments show that small language models can be viable for local AI applications when model selection, output validation, and hardware constraints are considered together.
+
+The final Qwen comparison also demonstrates an important engineering lesson: **reducing model size does not necessarily improve real-world inference performance on every hardware configuration.** Quantization should therefore be evaluated as a measurable trade-off between footprint, speed, and quality rather than treated as an automatic optimization.
