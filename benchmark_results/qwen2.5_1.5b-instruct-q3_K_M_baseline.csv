@@ -1,0 +1,6 @@
+run,model,temperature,max_output_tokens,ttft_seconds,total_latency_seconds,output_tokens,generation_time_seconds,tokens_per_second,memory_before_gb,memory_after_gb
+1,qwen2.5:1.5b-instruct-q3_K_M,0,100,13.9473,21.1494,68,13.2677,5.1252,5.434,5.2056
+2,qwen2.5:1.5b-instruct-q3_K_M,0,100,0.6506,9.8721,68,9.2339,7.3642,5.2568,5.2635
+3,qwen2.5:1.5b-instruct-q3_K_M,0,100,1.1043,9.0659,68,8.5787,7.9266,5.2691,5.5387
+4,qwen2.5:1.5b-instruct-q3_K_M,0,100,1.4931,10.1259,68,8.9097,7.6322,5.5518,5.5386
+5,qwen2.5:1.5b-instruct-q3_K_M,0,100,6.3639,16.4877,68,12.2128,5.5679,5.5534,5.428

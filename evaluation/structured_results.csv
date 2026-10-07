@@ -1,0 +1,101 @@
+id,prompt,status,model_response
+1,"My name is Ali, I am 25 years old and I live in Pakistan.",first_attempt,"{
+  ""name"": ""Ali"",
+  ""age"": 25,
+  ""country"": ""Pakistan""
+}"
+2,Sara is 30 years old and lives in Canada.,first_attempt,"{
+  ""name"": ""Sara"",
+  ""age"": 30,
+  ""country"": ""Canada""
+}"
+3,"John, age 42, is from the United States.",first_attempt,"{
+  ""name"": ""John"",
+  ""age"": 42,
+  ""country"": ""United States""
+}"
+4,Ahmed is 28 years old and lives in the UAE.,first_attempt,"{
+  ""name"": ""Ahmed"",
+  ""age"": 28,
+  ""country"": ""UAE""
+}"
+5,Maria is 35 and she lives in Germany.,first_attempt,"{
+  ""name"": ""Maria"",
+  ""age"": 35,
+  ""country"": ""Germany""
+}"
+6,My friend Hassan is 22 years old and lives in Pakistan.,first_attempt,"{
+  ""name"": ""Hassan"",
+  ""age"": 22,
+  ""country"": ""Pakistan""
+}"
+7,Lisa is 31 years old and lives in Australia.,first_attempt,"{
+  ""name"": ""Lisa"",
+  ""age"": 31,
+  ""country"": ""Australia""
+}"
+8,David is 45 and lives in the United Kingdom.,first_attempt,"{
+  ""name"": ""David"",
+  ""age"": 45,
+  ""country"": ""United Kingdom""
+}"
+9,Fatima is 27 years old and lives in Saudi Arabia.,first_attempt,"{
+  ""name"": ""Fatima"",
+  ""age"": 27,
+  ""country"": ""Saudi Arabia""
+}"
+10,Robert is 38 years old and lives in France.,first_attempt,"{
+  ""name"": ""Robert"",
+  ""age"": 38,
+  ""country"": ""France""
+}"
+11,Ayesha is 24 and lives in Pakistan.,first_attempt,"{
+  ""name"": ""Ayesha"",
+  ""age"": 24,
+  ""country"": ""Pakistan""
+}"
+12,James is 29 years old and lives in the United States.,first_attempt,"{
+  ""name"": ""James"",
+  ""age"": 29,
+  ""country"": ""United States""
+}"
+13,Emma is 33 years old and lives in Canada.,first_attempt,"{
+  ""name"": ""Emma"",
+  ""age"": 33,
+  ""country"": ""Canada""
+}"
+14,Bilal is 26 years old and lives in Pakistan.,first_attempt,"{
+  ""name"": ""Bilal"",
+  ""age"": 26,
+  ""country"": ""Pakistan""
+}"
+15,Sophia is 40 years old and lives in Italy.,first_attempt,"{
+  ""name"": ""Sophia"",
+  ""age"": 40,
+  ""country"": ""Italy""
+}"
+16,Omar is 32 years old and lives in Qatar.,first_attempt,"{
+  ""name"": ""Omar"",
+  ""age"": 32,
+  ""country"": ""Qatar""
+}"
+17,Daniel is 37 years old and lives in Spain.,first_attempt,"{
+  ""name"": ""Daniel"",
+  ""age"": 37,
+  ""country"": ""Spain""
+}"
+18,Zainab is 23 years old and lives in Pakistan.,first_attempt,"{
+  ""name"": ""Zainab"",
+  ""age"": 23,
+  ""country"": ""Pakistan""
+}"
+19,Michael is 41 years old and lives in Germany.,first_attempt,"{
+  ""name"": ""Michael"",
+  ""age"": 41,
+  ""country"": ""Germany""
+}"
+20,Noah is 34 years old and lives in France.,first_attempt,"{
+  ""name"": ""Noah"",
+  ""age"": 34,
+  ""country"": ""France""
+}"

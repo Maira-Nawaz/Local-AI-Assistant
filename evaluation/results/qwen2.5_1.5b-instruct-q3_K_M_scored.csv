@@ -1,0 +1,147 @@
+id,category,prompt,expected_answer,model_response,correct
+1,Knowledge,What is the capital city of Japan?,Tokyo,The capital city of Japan is Tokyo.,True
+2,Knowledge,What does CPU stand for?,Central Processing Unit,CPU stands for Central Processing Unit. It is the core component of a computer responsible for executing instructions and performing calculations.,True
+3,Knowledge,What is the primary purpose of a database?,"To store, organize, and manage data","The primary purpose of a database is to store, manage, and retrieve large amounts of structured data efficiently. It allows for the organization, retrieval, and manipulation of data in a way that is consistent and reliable. Databases are used to store and manage information in a structured format, making it easier to access and manipulate the data as needed. They are used in a variety of applications, including business intelligence, data warehousing, and scientific computing, among others.",True
+4,Knowledge,What is the main difference between RAM and permanent storage?,"RAM is temporary/volatile memory, while permanent storage retains data","The main difference between RAM (Random Access Memory) and permanent storage (such as hard disk drives, solid-state drives, etc.) is that:
+
+1. **RAM is volatile**: RAM is volatile, meaning it loses its data when the power is turned off. This means that the information stored in RAM is not permanent and can be lost if the system is powered off.
+
+2. **Permanent storage is non-volatile**: Permanent storage, such as hard drives or solid-state drives, are non-volatile",True
+5,Knowledge,What does HTTP stand for?,Hypertext Transfer Protocol,HTTP stands for HyperText Transfer Protocol. It is the standard protocol used for web browsers to communicate with web servers to request and receive web pages. HTTP is the underlying protocol that enables the transfer of data between a client (web browser) and a server (web server). It is the foundation for the World Wide Web and is the standard protocol for web traffic on the internet.,True
+6,Explanation,Explain what an API is in simple terms.,An API allows different software systems to communicate with each other,"An API, or Application Programming Interface, is like a set of rules and guidelines that different software applications can follow to communicate with each other. It's a way for different programs to talk to each other and share information or perform actions.
+
+Imagine if you had a toy box and a toy car. The toy car can't talk to the toy box directly, but if you make the toy box an API, the toy car can understand how to interact with it. It's like a language that the toy",True
+7,Explanation,Explain what a data warehouse is in simple terms.,A data warehouse stores integrated data for analysis and reporting,"A data warehouse is like a big storage facility for all the data that your organization collects and stores. It's a centralized place where you can store all the information related to your business operations, transactions, and other important data. This data warehouse is designed to be a central repository for all the data that your organization needs to make informed decisions and to support its operations.
+
+In simple terms, a data warehouse is a collection of data that is organized and stored in a way that makes it easy to access and",False
+8,Explanation,What is the difference between artificial intelligence and machine learning?,AI is the broader concept of machines performing intelligent tasks; ML is a subset that learns from data,"Artificial Intelligence (AI) and Machine Learning (ML) are two related but distinct concepts that are often used interchangeably, but they have some differences.
+
+Artificial Intelligence (AI) refers to the ability of a machine to perform tasks that typically require human intelligence, such as learning, reasoning, and understanding. AI encompasses a wide range of technologies, including natural language processing, computer vision, robotics, and more. AI can be thought of as the broader field that includes all of these technologies.
+
+Machine",False
+9,Explanation,Explain ETL in simple terms.,"ETL means Extract, Transform, Load: obtaining data, cleaning/transforming it, and loading it into a destination","ETL stands for Extract, Transform, Load. It's a process used in data management and data warehousing to clean, organize, and move data from one system to another. Let's break it down into simple steps:
+
+1. **Extract**: This is the first step where you gather the data from various sources. It's like collecting all the ingredients for a recipe. This could be from different databases, files, or even from the internet.
+
+2. **Transform**: After gathering the data,",True
+10,Explanation,What is a primary key in a database?,A primary key uniquely identifies each record in a table,"A primary key in a database is a special type of constraint that uniquely identifies each row or record in a table. It is a field or set of fields that can be used to identify a specific record within a table. Here are some key points about primary keys:
+
+1. Uniqueness: Each row in a table must have a unique primary key value.
+
+2. Not null: A primary key cannot be null; it must be a non-NULL value.
+
+3. Primary: It is the",True
+11,Summarization,"Summarize this in one sentence: A data pipeline collects data from different sources, transforms it into a usable format, and sends it to a destination such as a data warehouse. Automated pipelines can run on a schedule and reduce manual work.","A data pipeline collects, transforms, and delivers data automatically","A data pipeline is a system that collects, transforms, and sends data from various sources to a destination, automating the process to reduce manual work.",True
+12,Summarization,Summarize this in two sentences: Machine learning models learn patterns from historical data. The model can then use those patterns to make predictions on new data. The quality of predictions depends heavily on the quality and relevance of the training data.,Machine learning learns patterns from historical data to make predictions on new data. Prediction quality depends heavily on the training data,"Machine learning models analyze historical data to identify patterns, which they can use to predict outcomes on new data. The accuracy of predictions hinges on the quality and relevance of the training data.",True
+13,Summarization,"Summarize this in one sentence: Power BI is a business intelligence tool that allows users to connect to data, transform it, create data models, and build interactive dashboards and reports.","Power BI connects, transforms, models, and visualizes data through interactive reports and dashboards","Power BI is a business intelligence platform enabling users to connect, transform, model, and create interactive reports and dashboards.",True
+14,Summarization,Summarize this in two sentences: Cloud computing allows organizations to use computing resources over the internet instead of maintaining all infrastructure themselves. It can provide scalable storage and computing power while reducing the need for upfront hardware investment.,Cloud computing provides computing resources over the internet. It offers scalable infrastructure while reducing the need for upfront hardware investment,"Cloud computing enables organizations to access computing resources over the internet, offering scalable storage and computing power while reducing the need for upfront hardware investment.",True
+15,Summarization,"Summarize this in one sentence: Data quality problems such as missing values, duplicate records, inconsistent formats, and incorrect values can negatively affect analysis and business decisions.",Poor data quality can negatively affect analysis and business decisions,"Data quality issues, including missing values, duplicates, inconsistent formats, and incorrect data, can impact analysis and decision-making.",True
+16,Classification,"Classify this customer request as Billing, Technical, Account, or Other: I was charged twice for the same subscription.",Billing,Billing,True
+17,Classification,"Classify this customer request as Billing, Technical, Account, or Other: The application crashes whenever I try to upload a file.",Technical,"This customer request is classified as a ""Technical"" issue. The application crashing when uploading a file is a technical problem that requires troubleshooting and possibly software or configuration adjustments to resolve.",True
+18,Classification,"Classify this customer request as Billing, Technical, Account, or Other: I forgot my password and cannot log into my account.",Account,"This customer request is classified as a ""Technical"" issue. The password reset is a technical problem that requires knowledge of the system's password reset process.",False
+19,Classification,"Classify this customer request as Billing, Technical, Account, or Other: I want to change the email address associated with my account.",Account,"This customer request is classified as a ""Technical"" issue. The email address associated with an account is typically a technical setting that can be changed through the account management or settings interface of the service provider.",True
+20,Classification,"Classify this customer request as Billing, Technical, Account, or Other: Do you offer this product in blue?",Other,"This customer request is classified as a ""Technical"" issue. The customer is asking about the availability of a specific product in a particular color (blue), which is a technical detail related to product offerings.",False
+21,Information Extraction,"Extract the name, company, and job title: Sarah Ahmed is a Data Analyst at TechNova.",Name: Sarah Ahmed; Company: TechNova; Job title: Data Analyst,"- **Name**: Sarah Ahmed
+- **Company**: TechNova
+- **Job Title**: Data Analyst",True
+22,Information Extraction,"Extract the date, time, and location: The meeting with Ali is scheduled for October 15, 2026 at 3:30 PM in Meeting Room B.","Date: October 15, 2026; Time: 3:30 PM; Location: Meeting Room B","The date is October 15, 2026, the time is 3:30 PM, and the location is Meeting Room B.",True
+23,Information Extraction,"Extract the order number, product, and quantity: Order #A4582 contains 3 wireless keyboards.",Order number: A4582; Product: wireless keyboards; Quantity: 3,"Order number: A4582
+Product: Wireless keyboard
+Quantity: 3",False
+24,Information Extraction,"Extract the invoice number, customer, and total: Invoice INV-9081 was issued to ABC Solutions for a total of $450.",Invoice number: INV-9081; Customer: ABC Solutions; Total: $450,"Invoice: INV-9081  
+Customer: ABC Solutions  
+Total: $450",True
+25,Information Extraction,"Extract the employee name, department, and experience: Hamza Khan works in the Marketing department and has 4 years of experience.",Name: Hamza Khan; Department: Marketing; Experience: 4 years,"Employee Name: Hamza Khan
+Department: Marketing
+Experience: 4 years",True
+26,Reasoning,Ali is taller than Bilal. Bilal is taller than Usman. Who is the shortest?,Usman,"To determine who is the shortest, let's analyze the information given step by step:
+
+1. Ali is taller than Bilal.
+2. Bilal is taller than Usman.
+
+From these two statements, we can infer the following order:
+
+- Ali > Bilal
+- Bilal > Usman
+
+Combining these two, we get:
+
+- Ali > Bilal > Usman
+
+Therefore, Usman is the shortest among the three.",True
+27,Reasoning,A store has 120 notebooks. It sells 35 in the morning and 28 in the afternoon. How many notebooks remain?,57,"To determine how many notebooks remain in the store, we need to follow these steps:
+
+1. Calculate the total number of notebooks sold in the morning.
+2. Calculate the total number of notebooks sold in the afternoon.
+3. Subtract the total number of notebooks sold from the initial number of notebooks in the store.
+
+Let's go through each step in detail:
+
+1. The store sells 35 notebooks in the morning.
+2. The store sells 28 notebooks in the afternoon.
+3. The",False
+28,Reasoning,"What number comes next in this sequence: 2, 4, 8, 16, 32, ?",64,"The sequence is a geometric progression where each term is obtained by multiplying the previous term by 2. Therefore, the next number in the sequence would be 32 * 2 = 64.",True
+29,Reasoning,"There are three boxes labeled Apples, Oranges, and Mixed. Every label is incorrect. You pick one fruit from the box labeled Mixed and it is an apple. What is actually in the box labeled Mixed?",Apples,"Given that the labels on the boxes are incorrect, let's deduce the contents of each box step by step:
+
+1. **Identify the Mixed Box**: You picked an apple from the Mixed box. This means the Mixed box does **not** contain apples. Since the labels are incorrect, the Mixed box must contain either Oranges or Apples.
+
+2. **Determine the Oranges Box**: Since the Mixed box does not contain apples, it must contain either Oranges or Apples.",True
+30,Reasoning,A product costs $80. It is discounted by 25%. What is the final price?,$60,"To find the final price of the product after a 25% discount, we can follow these steps:
+
+1. Calculate the amount of the discount:
+   \[
+   \text{Discount Amount} = \text{Original Price} \times \text{Discount Rate}
+   \]
+   Here, the original price is $80 and the discount rate is 25%, or 0.25 in decimal form.
+
+   \[
+   \text{Discount Amount} = ",False
+31,Instruction Following,Write a professional email in no more than 50 words asking a manager for one day of leave. Do not use the word 'urgent'. End the email with 'Thank you for understanding.',"Must be a professional leave request, 50 words or fewer, must not contain 'urgent', and must end with the specified sentence","Subject: Request for Leave - [Reason for Leave]
+
+Dear [Manager's Name],
+
+I hope this email finds you well. I am writing to request a day of leave from my current position. This leave is due to [reason for leave], which I believe will not affect my work significantly.
+
+I am committed to ensuring that my responsibilities are covered during my absence. I will work with my team to arrange for a colleague to cover my duties for the day.
+
+Thank you for understanding my request. I",False
+32,Instruction Following,List exactly 3 benefits of data visualization. Use bullet points. Each bullet must contain no more than 8 words.,"Exactly 3 bullet points, each with 8 words or fewer, describing valid benefits","- Simplifies complex information into easily digestible visuals.
+- Enhances understanding by removing clutter from raw data.
+- Facilitates quicker decision-making through clear, concise insights.",True
+33,Instruction Following,Rewrite this sentence in active voice and do not use adjectives: 'The report was prepared by the analyst.',The analyst prepared the report.,The analyst prepared the report.,True
+34,Instruction Following,Answer the following question using exactly 5 words: What is the purpose of data analysis?,To support better business decisions,To uncover insights and make informed decisions.,False
+35,Instruction Following,Create a title for a presentation about data quality. The title must contain exactly 6 words.,Exactly 6 words and clearly related to data quality,"""Enhancing Data Quality: Strategies and Best Practices""",False
+36,Structured Output,"Return only valid JSON with the fields name, age, and city for this person: Aisha is 25 years old and lives in Lahore.","JSON object with name=Aisha, age=25, city=Lahore","```json
+{
+  ""name"": ""Aisha"",
+  ""age"": 25,
+  ""city"": ""Lahore""
+}
+```",True
+37,Structured Output,"Return only valid JSON with the fields product, quantity, and price: A customer bought 2 laptops at $800 each.","JSON object with product=laptops, quantity=2, price=800","```json
+{
+  ""product"": ""laptops"",
+  ""quantity"": 2,
+  ""price"": 800
+}
+```",True
+38,Structured Output,"Return only valid JSON with the fields category and sentiment: The customer says, 'The product is excellent and I am very happy with it.'",JSON object with category=product and sentiment=positive,"```json
+{
+  ""category"": ""positive"",
+  ""sentiment"": ""positive""
+}
+```",False
+39,Structured Output,"Return only valid JSON with the fields task, priority, and completed. The task is 'Prepare monthly report', its priority is high, and it is not completed.","JSON object with task=Prepare monthly report, priority=high, completed=false","```json
+{
+  ""task"": ""Prepare monthly report"",
+  ""priority"": ""high"",
+  ""completed"": false
+}
+```",False
+40,Structured Output,"Return only valid JSON with the fields name, date, and location. Event: Data Analytics Workshop, October 20, 2026, Islamabad.","JSON object with name=Data Analytics Workshop, date=October 20, 2026, location=Islamabad","```json
+{
+  ""name"": ""Data Analytics Workshop"",
+  ""date"": ""20 October 2026"",
+  ""location"": ""Islamabad""
+}
+```",False

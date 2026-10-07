@@ -1,0 +1,6 @@
+run,model,temperature,max_output_tokens,ttft_seconds,total_latency_seconds,output_tokens,generation_time_seconds,tokens_per_second,memory_before_gb,memory_after_gb
+1,phi3.5,0,100,12.4326,37.3897,92,27.7309,3.3176,5.3142,5.1361
+2,phi3.5,0,100,0.3414,23.484,92,23.1432,3.9753,5.1363,5.2124
+3,phi3.5,0,100,0.3926,23.2345,92,22.882,4.0206,5.2124,5.3518
+4,phi3.5,0,100,0.6232,25.6881,92,25.3373,3.631,5.3518,5.2168
+5,phi3.5,0,100,0.2794,27.5647,92,27.2875,3.3715,5.2168,5.3246

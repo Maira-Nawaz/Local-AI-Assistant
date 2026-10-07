@@ -1,0 +1,147 @@
+id,category,prompt,expected_answer,model_response,correct
+1,Knowledge,What is the capital city of Japan?,Tokyo,The capital city of Japan is Tokyo.,True
+2,Knowledge,What does CPU stand for?,Central Processing Unit,CPU stands for Central Processing Unit.,True
+3,Knowledge,What is the primary purpose of a database?,"To store, organize, and manage data","The primary purpose of a database is to store, manage, and retrieve large amounts of structured data efficiently. Here are some key points about the primary purpose of a database:
+
+1. Data Storage: A database is designed to store large volumes of structured data, such as customer information, product details, financial records, and more.
+
+2. Data Organization: It organizes data in a logical and efficient manner, making it easier to find and retrieve specific information.
+
+3. Data Security: Databases provide security",True
+4,Knowledge,What is the main difference between RAM and permanent storage?,"RAM is temporary/volatile memory, while permanent storage retains data","The main difference between RAM (Random Access Memory) and permanent storage (such as hard disk drives, solid-state drives, or optical drives) is that RAM is temporary and volatile, meaning that it loses its data when the power is turned off, while permanent storage retains its data even when the power is turned off.",True
+5,Knowledge,What does HTTP stand for?,Hypertext Transfer Protocol,HTTP stands for Hypertext Transfer Protocol.,True
+6,Explanation,Explain what an API is in simple terms.,An API allows different software systems to communicate with each other,"An API, or Application Programming Interface, is a set of rules and protocols that allow different software applications to communicate with each other. It's like a set of instructions that tells other programs how to talk to each other and share information.
+
+Think of it as a way for different apps to ""talk"" to each other, just like how you might tell your friends what game you're playing or what you want to eat for dinner. APIs allow different apps to share information and work together seamlessly, without having",True
+7,Explanation,Explain what a data warehouse is in simple terms.,A data warehouse stores integrated data for analysis and reporting,"A data warehouse is a centralized repository of data that is organized and transformed to provide a consistent view of the data for analysis. It is a collection of data that is stored in a structured format and is designed to support decision-making and analysis. The data warehouse is typically used to store and manage large amounts of data from various sources, such as transactional databases, and to provide a consistent view of the data for analysis. It is often used in conjunction with data marts, which are smaller, more",True
+8,Explanation,What is the difference between artificial intelligence and machine learning?,AI is the broader concept of machines performing intelligent tasks; ML is a subset that learns from data,"Artificial Intelligence (AI) and Machine Learning (ML) are related but distinct concepts in the field of computer science and artificial intelligence. Here's a breakdown of the differences:
+
+1. **Artificial Intelligence (AI)**:
+   - AI refers to the broader field of computer science that focuses on creating machines that can perform tasks that typically require human intelligence.
+   - It encompasses a wide range of techniques and technologies, including natural language processing, computer vision, robotics, and more.
+   - AI aims",False
+9,Explanation,Explain ETL in simple terms.,"ETL means Extract, Transform, Load: obtaining data, cleaning/transforming it, and loading it into a destination","ETL stands for Extract, Transform, Load. It's a process used in data management to extract data from various sources, transform it into a format suitable for analysis or use, and then load it into a destination system. This process is commonly used in businesses to clean and organize data before it can be used for reporting, analytics, or other purposes.",True
+10,Explanation,What is a primary key in a database?,A primary key uniquely identifies each record in a table,"A primary key in a database is a field or set of fields that uniquely identifies each record in a table. It is a constraint that ensures that each row in the table has a unique value for the primary key field(s). This is important for maintaining data integrity and ensuring that the database can be queried and updated efficiently.
+
+Here are some key points about primary keys:
+
+1. Uniqueness: Each record must have a unique value for the primary key field(s).
+
+2. Non-null: The primary",True
+11,Summarization,"Summarize this in one sentence: A data pipeline collects data from different sources, transforms it into a usable format, and sends it to a destination such as a data warehouse. Automated pipelines can run on a schedule and reduce manual work.","A data pipeline collects, transforms, and delivers data automatically","A data pipeline collects, transforms, and sends data from various sources to a destination like a data warehouse, often automated to reduce manual work.",True
+12,Summarization,Summarize this in two sentences: Machine learning models learn patterns from historical data. The model can then use those patterns to make predictions on new data. The quality of predictions depends heavily on the quality and relevance of the training data.,Machine learning learns patterns from historical data to make predictions on new data. Prediction quality depends heavily on the training data,"Machine learning models learn from historical data to make predictions on new data, with the quality of predictions heavily dependent on the quality and relevance of the training data.",False
+13,Summarization,"Summarize this in one sentence: Power BI is a business intelligence tool that allows users to connect to data, transform it, create data models, and build interactive dashboards and reports.","Power BI connects, transforms, models, and visualizes data through interactive reports and dashboards","Power BI is a business intelligence tool that enables users to connect to data, transform it, create data models, and build interactive dashboards and reports.",True
+14,Summarization,Summarize this in two sentences: Cloud computing allows organizations to use computing resources over the internet instead of maintaining all infrastructure themselves. It can provide scalable storage and computing power while reducing the need for upfront hardware investment.,Cloud computing provides computing resources over the internet. It offers scalable infrastructure while reducing the need for upfront hardware investment,"Cloud computing enables organizations to access computing resources and storage over the internet, offering scalability and reduced upfront hardware costs.",True
+15,Summarization,"Summarize this in one sentence: Data quality problems such as missing values, duplicate records, inconsistent formats, and incorrect values can negatively affect analysis and business decisions.",Poor data quality can negatively affect analysis and business decisions,"Data quality issues, including missing values, duplicates, inconsistent formats, and incorrect data, can harm analysis and decision-making.",True
+16,Classification,"Classify this customer request as Billing, Technical, Account, or Other: I was charged twice for the same subscription.",Billing,"This customer request should be classified as Billing. The issue of being charged twice for the same subscription is typically related to a billing error or mistake, which falls under the category of billing issues.",True
+17,Classification,"Classify this customer request as Billing, Technical, Account, or Other: The application crashes whenever I try to upload a file.",Technical,"This customer request should be classified as Technical. The issue is related to a software application crashing when trying to upload a file, which is a technical problem that requires troubleshooting and possibly software updates or configuration changes.",True
+18,Classification,"Classify this customer request as Billing, Technical, Account, or Other: I forgot my password and cannot log into my account.",Account,"This customer request falls under the category of ""Account"". The issue is related to the customer's account login credentials, specifically the forgotten password.",True
+19,Classification,"Classify this customer request as Billing, Technical, Account, or Other: I want to change the email address associated with my account.",Account,This customer request is classified as Account.,True
+20,Classification,"Classify this customer request as Billing, Technical, Account, or Other: Do you offer this product in blue?",Other,"This customer request can be classified as ""Technical"". The request is asking about the availability of a specific product in a particular color, which is a technical inquiry related to product offerings and specifications.",False
+21,Information Extraction,"Extract the name, company, and job title: Sarah Ahmed is a Data Analyst at TechNova.",Name: Sarah Ahmed; Company: TechNova; Job title: Data Analyst,"Name: Sarah Ahmed
+Company: TechNova
+Job Title: Data Analyst",True
+22,Information Extraction,"Extract the date, time, and location: The meeting with Ali is scheduled for October 15, 2026 at 3:30 PM in Meeting Room B.","Date: October 15, 2026; Time: 3:30 PM; Location: Meeting Room B","Date: October 15, 2026
+Time: 3:30 PM
+Location: Meeting Room B",True
+23,Information Extraction,"Extract the order number, product, and quantity: Order #A4582 contains 3 wireless keyboards.",Order number: A4582; Product: wireless keyboards; Quantity: 3,Order #A4582 contains 3 wireless keyboards.,True
+24,Information Extraction,"Extract the invoice number, customer, and total: Invoice INV-9081 was issued to ABC Solutions for a total of $450.",Invoice number: INV-9081; Customer: ABC Solutions; Total: $450,"Invoice Number: INV-9081  
+Customer: ABC Solutions  
+Total: $450",True
+25,Information Extraction,"Extract the employee name, department, and experience: Hamza Khan works in the Marketing department and has 4 years of experience.",Name: Hamza Khan; Department: Marketing; Experience: 4 years,"Employee Name: Hamza Khan
+Department: Marketing
+Experience: 4 years",True
+26,Reasoning,Ali is taller than Bilal. Bilal is taller than Usman. Who is the shortest?,Usman,"To determine who is the shortest, we need to compare the heights of Ali, Bilal, and Usman. Let's break it down step by step:
+
+1. We know that Ali is taller than Bilal.
+   \[
+   \text{Ali} > \text{Bilal}
+   \]
+
+2. We also know that Bilal is taller than Usman.
+   \[
+   \text{Bilal} > \text{Usman}
+   \]
+
+Now",True
+27,Reasoning,A store has 120 notebooks. It sells 35 in the morning and 28 in the afternoon. How many notebooks remain?,57,"To determine how many notebooks remain after the store sells some in the morning and afternoon, we can follow these steps:
+
+1. Start with the total number of notebooks initially available.
+2. Subtract the number of notebooks sold in the morning.
+3. Subtract the number of notebooks sold in the afternoon.
+
+Let's do the calculations step by step:
+
+1. Initial number of notebooks: 120
+2. Number of notebooks sold in the morning: 35
+   \[
+   1",False
+28,Reasoning,"What number comes next in this sequence: 2, 4, 8, 16, 32, ?",64,"The sequence you've provided is a geometric progression where each term is double the previous term. The next number in the sequence would be 64, as 32 multiplied by 2 equals 64.",True
+29,Reasoning,"There are three boxes labeled Apples, Oranges, and Mixed. Every label is incorrect. You pick one fruit from the box labeled Mixed and it is an apple. What is actually in the box labeled Mixed?",Apples,"Given that all the labels are incorrect, let's analyze the situation step by step:
+
+1. **Identify the Mixed Box:**
+   - You picked an apple from the Mixed box.
+
+2. **Determine the Contents of the Mixed Box:**
+   - Since the Mixed box is labeled incorrectly, it cannot contain mixed fruits.
+   - Therefore, the Mixed box must contain either only apples or only oranges.
+
+3. **Eliminate the Other Boxes:**
+   - The box labeled Apples",True
+30,Reasoning,A product costs $80. It is discounted by 25%. What is the final price?,$60,"To find the final price of the product after a 25% discount, we can follow these steps:
+
+1. Calculate the amount of the discount.
+2. Subtract the discount from the original price.
+
+First, let's calculate the discount amount. The original price of the product is $80, and the discount is 25%. To find 25% of $80, we can use the following calculation:
+
+\[ \text{Discount Amount} = 80 \times",False
+31,Instruction Following,Write a professional email in no more than 50 words asking a manager for one day of leave. Do not use the word 'urgent'. End the email with 'Thank you for understanding.',"Must be a professional leave request, 50 words or fewer, must not contain 'urgent', and must end with the specified sentence","Subject: Request for One Day of Leave
+
+Dear [Manager's Name],
+
+I hope this email finds you well. I am writing to request one day of leave from my current duties. I am currently working on a project that is critical to the success of our team, and I believe I can manage my responsibilities effectively during this period. I am available to discuss the project and ensure a smooth transition if needed. Please let me know if this is feasible.
+
+Thank you for understanding and considering my request.
+
+",False
+32,Instruction Following,List exactly 3 benefits of data visualization. Use bullet points. Each bullet must contain no more than 8 words.,"Exactly 3 bullet points, each with 8 words or fewer, describing valid benefits","- Simplifies complex information
+- Identifies patterns quickly
+- Enhances decision-making processes",True
+33,Instruction Following,Rewrite this sentence in active voice and do not use adjectives: 'The report was prepared by the analyst.',The analyst prepared the report.,The analyst prepared the report.,True
+34,Instruction Following,Answer the following question using exactly 5 words: What is the purpose of data analysis?,To support better business decisions,"To uncover patterns, make informed decisions.",False
+35,Instruction Following,Create a title for a presentation about data quality. The title must contain exactly 6 words.,Exactly 6 words and clearly related to data quality,"""Enhancing Data Quality: Strategies and Best Practices""",False
+36,Structured Output,"Return only valid JSON with the fields name, age, and city for this person: Aisha is 25 years old and lives in Lahore.","JSON object with name=Aisha, age=25, city=Lahore","```json
+{
+  ""name"": ""Aisha"",
+  ""age"": 25,
+  ""city"": ""Lahore""
+}
+```",True
+37,Structured Output,"Return only valid JSON with the fields product, quantity, and price: A customer bought 2 laptops at $800 each.","JSON object with product=laptops, quantity=2, price=800","```json
+{
+  ""product"": ""laptops"",
+  ""quantity"": 2,
+  ""price"": 800
+}
+```",True
+38,Structured Output,"Return only valid JSON with the fields category and sentiment: The customer says, 'The product is excellent and I am very happy with it.'",JSON object with category=product and sentiment=positive,"```json
+{
+  ""category"": ""positive"",
+  ""sentiment"": ""positive""
+}
+```",False
+39,Structured Output,"Return only valid JSON with the fields task, priority, and completed. The task is 'Prepare monthly report', its priority is high, and it is not completed.","JSON object with task=Prepare monthly report, priority=high, completed=false","```json
+{
+  ""task"": ""Prepare monthly report"",
+  ""priority"": ""high"",
+  ""completed"": false
+}
+```",False
+40,Structured Output,"Return only valid JSON with the fields name, date, and location. Event: Data Analytics Workshop, October 20, 2026, Islamabad.","JSON object with name=Data Analytics Workshop, date=October 20, 2026, location=Islamabad","```json
+{
+  ""name"": ""Data Analytics Workshop"",
+  ""date"": ""October 20, 2026"",
+  ""location"": ""Islamabad""
+}
+```",False
